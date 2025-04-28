@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Dashboard</title>
+<style>
+* Theme Variables */
+:root {
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #1c1c28;
+    --accent-color: #6c63ff;
+    --text-color: #333;
+    --text-light-color: #f4f6f8;
+}
+
+body.dark-theme {
+    --primary-bg-color: #1c1c28;
+    --secondary-bg-color: #2d2f3a;
+    --accent-color: #3f51b5;
+    --text-color: #f4f6f8;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: var(--secondary-bg-color);
+    color: var(--text-light-color);
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    text-align: center;
+    color: var(--accent-color);
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: var(--text-light-color);
+    padding: 10px;
+    display: block;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: var(--accent-color);
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    margin-top: 20px;
+}
+
+.editor, .popup, #taskList {
+    background-color: var(--secondary-bg-color);
+    color: var(--text-light-color);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    border: none;
+    font-family: monospace;
+}
+
+button {
+    padding: 8px 12px;
+    background-color: var(--accent-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--text-color);
+    color: var(--accent-color);
+}
+</style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>DevHub</h2>
+            <ul class="sidebar-menu">
+                <li><a href="#" id="toggleTheme">Toggle Theme</a></li>
+                <li><a href="#" data-section="dashboard">Dashboard</a></li>
+                <li><a href="#" data-section="projects">Projects</a></li>
+                <li><a href="#" data-section="tasks">Tasks</a></li>
+                <li><a href="#" data-section="devTools">DevTools</a></li>
+                <li><a href="#" id="notificationBtn">Notifications <span id="notification-count">3</span></a></li>
+                <li><a href="https://github.com" target="_blank">GitHub</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Developer Dashboard</h1>
+                <div class="user-profile">
+                    <span class="user-name">Hello, Developer!</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2>Welcome to the Dashboard</h2>
+                <p>Track your projects, tasks, and activities efficiently.</p>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="content-section">
+                <h2>Projects</h2>
+                <ul id="projectList">
+                    <li>Project A: AI Analysis</li>
+                    <li>Project B: UI Revamp</li>
+                    <li>Project C: Database Optimization</li>
+                </ul>
+            </section>
+
+            <!-- Tasks Section -->
+            <section id="tasks" class="content-section">
+                <h2>To-Do List</h2>
+                <input type="text" id="taskInput" placeholder="New Task" />
+                <button id="addTaskBtn">Add Task</button>
+                <ul id="taskList">
+                    <!-- Tasks will appear here -->
+                </ul>
+            </section>
+
+            <!-- DevTools Section -->
+            <section id="devTools" class="content-section">
+                <h2>DevTools</h2>
+
+                <!-- JavaScript Console -->
+                <div class="editor">
+                    <h4>JavaScript Console</h4>
+                    <textarea id="jsConsole" placeholder="Type JavaScript here..."></textarea>
+                    <button onclick="runJavaScript()">Run JavaScript</button>
+                    <div id="jsOutput" class="output">JavaScript output will appear here.</div>
+                </div>
+
+                <!-- Live HTML Editor -->
+                <div class="editor">
+                    <h4>Live HTML Editor</h4>
+                    <textarea id="htmlEditor" placeholder="Write HTML here..."></textarea>
+                    <div id="htmlPreview" class="preview"></div>
+                </div>
+            </section>
+
+            <!-- Notifications Popup -->
+            <div id="notificationPopup" class="popup hidden">
+                <h3>Notifications</h3>
+                <ul>
+                    <li>New message from team lead</li>
+                    <li>Update available for Project Alpha</li>
+                    <li>Bug report #102 resolved</li>
+                </ul>
+                <button id="closeNotification">Close</button>
+            </div>
+        </main>
+    </div>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+    // Theme Toggle
+    document.getElementById("toggleTheme").addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+    });
+
+    // Section Navigation
+    const sections = document.querySelectorAll(".content-section");
+    document.querySelectorAll(".sidebar-menu a[data-section]").forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            sections.forEach(section => section.classList.remove("active"));
+            const sectionId = link.getAttribute("data-section");
+            document.getElementById(sectionId).classList.add("active");
+        });
+    });
+
+    // JavaScript Console
+    window.runJavaScript = function () {
+        const code = document.getElementById("jsConsole").value;
+        try {
+            const result = eval(code);
+            document.getElementById("jsOutput").textContent = result || "Executed successfully.";
+        } catch (error) {
+            document.getElementById("jsOutput").textContent = `Error: ${error.message}`;
+        }
+    };
+
+    // Live HTML Editor
+    const htmlEditor = document.getElementById("htmlEditor");
+    const htmlPreview = document.getElementById("htmlPreview");
+    htmlEditor.addEventListener("input", () => {
+        htmlPreview.innerHTML = htmlEditor.value;
+    });
+
+    // Notifications Popup
+    const notificationBtn = document.getElementById("notificationBtn");
+    const notificationPopup = document.getElementById("notificationPopup");
+    const closeNotification = document.getElementById("closeNotification");
+    notificationBtn.addEventListener("click", () => {
+        notificationPopup.classList.toggle("hidden");
+    });
+    closeNotification.addEventListener("click", () => {
+        notificationPopup.classList.add("hidden");
+    });
+
+    // To-Do List
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    document.getElementById("addTaskBtn").addEventListener("click", () => {
+        const taskText = taskInput.value.trim();
+        if (taskText) {
+            const li = document.createElement("li");
+            li.textContent = taskText;
+            taskList.appendChild(li);
+            taskInput.value = "";
+        }
+    });
+});
+</script>
+</body>
+</html>

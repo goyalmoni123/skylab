@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skylab</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #0d1117;
+        color: #c9d1d9;
+        line-height: 1.6;
+    }
+
+            .navbar {
+        display: flex;
+        align-items: center;
+        background-color: #21262d;
+        padding: 10px 20px;
+        border-bottom: 1px solid #58a6ff;
+    }
+
+    .navbar img {
+        width: 100px; /* Adjust the width as needed */
+        height: auto; /* Maintain aspect ratio */
+        vertical-align: middle;
+        margin-right: 20px; /* Spacing between the logo and the links */
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #c9d1d9;
+        margin: 0 15px;
+        font-size: 16px;
+    }
+
+    .navbar a:hover {
+        color: #58a6ff;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #21262d;
+        border: 1px solid #58a6ff;
+        border-radius: 5px;
+        min-width: 150px;
+        z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+        .header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .header h1 {
+            font-size: 100px;
+            margin: 0;
+        }
+       .header h1 span {
+    display: inline-block;
+    animation: fadeInBounce 2s ease-in-out;
+    animation-delay: calc(var(--i) * 0.1s);
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInBounce {
+    0% {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(10px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+        .header p {
+            font-size: 20px;
+            color:#58a6ff;
+        }
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    transition: transform 0.4s;
+}
+
+.images img {
+    width: 45%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+        .services {
+            text-align: center;
+            padding: 20px;
+        }
+        .services h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .service-card {
+            background-color: black;
+            border: 1px solid white;
+            padding: 20px;
+            width: 300px;
+            text-align: left;
+        }
+        .service-card h3 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .service-card p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .service-card button {
+            padding: 10px 20px;
+            border: none;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+        }
+        .cta p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .cta button {
+            padding: 10px 20px;
+            border: none;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        .posts {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .post {
+            background-color: #111;
+            border: 1px solid #333;
+            padding: 20px;
+            width: 32%;
+        }
+        .post img {
+            width: 100%;
+            height: auto;
+        }
+        .post .author {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #58a6ff;
+        }
+        .post .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .post .description {
+            font-size: 16px;
+            color: #ccc;
+        }
+        .post .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            border-top: 1px solid #333;
+            padding-top: 10px;
+        }
+        .post .footer .views,
+        .post .footer .likes {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .post .footer .views i,
+        .post .footer .likes i {
+            margin-right: 5px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: space-between;
+        }
+        .gallery img {
+            width: 18%;
+            height: auto;
+        }
+      /* Success Stories */
+     .story-card h3 {
+    color: #64B5F6;
+    font-weight: bold;
+    }
+        .stories {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .story-card {
+            background-color: #1c1c1c;
+            padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            text-align: center;
+        }
+/*additional work*/
+   .content-area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        max-width: 100%;
+    }
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .info-card {
+        background-color: #161b22;
+        border-radius: 8px;
+        padding: 20px;
+        width: 300px;
+        box-sizing: border-box;
+    }
+
+    .info-card h2 {
+        color: #ffffff;
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .info-card p {
+        color: #8b949e;
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .info-card a {
+        color: #58a6ff;
+        text-decoration: none;
+    }
+
+    .info-card a:hover {
+        text-decoration: underline;
+    }
+
+    .summary-card {
+        background-color: #161b22;
+        border-radius: 8px;
+        padding: 20px;
+        width: 90%;
+        max-width: 600px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .summary-card h2 {
+        color: #ffffff;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .summary-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .summary-stats div {
+        text-align: center;
+    }
+
+    .summary-stats h3 {
+        color: #ffffff;
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .summary-stats p {
+        color: #8b949e;
+        font-size: 14px;
+    }
+
+    .intro-section {
+        text-align: center;
+        padding: 40px;
+        animation: fadeIn 2s ease-in-out;
+        width: 300px;
+        background-color: #161b22;
+        border-radius: 8px;
+        box-sizing: border-box;
+    }
+
+    .intro-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 20px;
+        animation: bounce 2s infinite;
+    }
+
+    .intro-heading {
+        font-size: 1.5em;
+        font-weight: bold;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    .intro-subheading {
+        font-size: 1em;
+        color: #8b949e;
+    }
+
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+        40% { transform: translateY(-15px); }
+        60% { transform: translateY(-10px); }
+    }
+/*footer*/
+       .footer {
+            background-color: #111;
+            color: #ccc;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 40px 20px;
+            border-top: 1px solid #58a6ff;
+            flex-wrap: wrap;
+        }
+        .footer div {
+            width: 45%;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .footer h3 {
+            font-size: 24px;
+            color: #58a6ff;
+            margin-bottom: 20px;
+        }
+        .footer p, .footer a {
+            font-size: 16px;
+            color: #ccc;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .footer a:hover {
+            color: #00b3b3;
+        }
+        .footer .social-icons i {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #ccc;
+            transition: color 0.3s;
+        }
+        .footer .social-icons i:hover {
+            color: #00b3b3;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #333;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+<img src="C:\Users\goyal\Desktop\projects\skylab\skylab_logo.PNG" alt="About" style="width: 70px; height: 30px; vertical-align: middle; margin-right: 2px;">
+    <a href="file:///C:/Users/goyal/Desktop/projects/skylab/skyinfo.htm">About</a>
+          <div class="dropdown">
+    <a href="#">Services <i class="fas fa-caret-down"></i></a>
+    <div class="dropdown-content">
+        <a href="file:///C:/Users/goyal/Desktop/projects/skylab/test_service.htm">Testing Software</a>
+        <a href="file:///C:/Users/goyal/Desktop/projects/skylab/dev_service.htm">Development Services</a>
+        <a href="file:///C:/Users/goyal/Desktop/projects/skylab/job_service.htm">Job Creation</a>
+    </div>
+            </div>
+        <a href="file:///C:/Users/goyal/Desktop/projects/skylab/sky_discover.htm">Discover More</a>
+    </div>
+ <div class="header">
+  <h1>
+    <span style="--i:1">W</span><span style="--i:2">E</span><span style="--i:3">L</span><span style="--i:4">C</span><span style="--i:5">O</span><span style="--i:6">M</span><span style="--i:7">E</span>
+    <span style="--i:8">T</span><span style="--i:9">O</span>
+    <span style="--i:10">S</span><span style="--i:11">K</span><span style="--i:12">Y</span><span style="--i:13">L</span><span style="--i:14">A</span><span style="--i:15">B</span>
+</h1>
+
+    <p>Explore the Power of Development & Cloud Testing</p>
+</div>
+    <div class="images">
+        <img alt="Image of a server room with blue lighting" src="https://storage.googleapis.com/a1aa/image/5cnxfCeL0ppIAkPPDX7YmHqhiLmdMyf7UgWoeFrfjYFco58cC.jpg"/>
+        <img alt="Image of a futuristic computer interface with neon lights" src="https://storage.googleapis.com/a1aa/image/DYOfJ4ILrKwZKaXorPkfmOy7oyecsY7yevxyq17tQt0T0cecC.jpg"/>
+    </div>
+    <div class="services">
+        <h2>Services</h2>
+        <div class="service-cards">
+            <div class="service-card">
+                <h3>Testing Software</h3>
+                <p>Test Software</p>
+               <a href="file:///C:/Users/goyal/Desktop/projects/skylab/test_service.htm"><button>View </button></a>
+            </div>
+            <div class="service-card">
+                <h3>Job Creation</h3>
+                <p>Create Job</p>
+               <a href="file:///C:/Users/goyal/Desktop/projects/skylab/job_service.htm"><button>View </button></a>
+            </div>
+            <div class="service-card">
+                <h3>Development Of Software</h3>
+                <p>Develop Software</p>
+                <a href="file:///C:/Users/DELL/Desktop/skylab/dev_service.htm"><button>View </button></a>
+            </div>
+        </div>
+    </div>
+    <div class="cta">
+        <p>Revolutionizing Development Processes</p>
+        <div class="cta-buttons">
+            <a href="file:///C:/Users/goyal/Desktop/projects/skylab/job_siginout.html"><button>Get Started as Job Provider</button></a>
+            <a href="file:///C:/Users/goyal/Desktop/projects/skylab/dev_signup.html"><button>Get Started as Developer</button></a>
+            <a href="file:///C:/Users/goyal/Desktop/projects/skylab/tester_signup.html"><button>Get Started as Tester</button></a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1>FEATURES</h1>
+        </div>
+        <div class="posts">
+            <div class="post">
+                <img alt="A laptop displaying code with a futuristic background" src="https://storage.googleapis.com/a1aa/image/oIWdICre0uxeOUQ73ehxGfjs150zdJglJ63Qo7Mq8hdoTe8cC.jpg"/>
+                <div class="author">Khushi Singh</div>
+                <div class="title">Selenium Integration and Dashboard Development on Skylab Platform</div>
+                <div class="description">In the realm of software development and testing, the integration of Selenium and the development of dashboards is a pivotal aspect of...</div>
+                <div class="footer">
+                    <div class="views">
+                        <i class="fas fa-eye"></i> 0
+                    </div>
+                    <div class="likes">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <img alt="A desk setup with multiple monitors and plants" src="https://storage.googleapis.com/a1aa/image/aBmBbsKFpIYcGVZe6FrVYe4cftE3yS7QGZHywUbfo6ltTe8cC.jpg"/>
+                <div class="author">Monika Goyal</div>
+                <div class="title">Key Features and Benefits of Skylab for Developers and Testers</div>
+                <div class="description">Skylab opens up a world of possibilities for developers and testers looking to streamline the application testing process. With its...</div>
+                <div class="footer">
+                    <div class="views">
+                        <i class="fas fa-eye"></i> 0
+                    </div>
+                    <div class="likes">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <img alt="A control room with multiple screens displaying data" src="C:\Users\DELL\Desktop\skylab\control.jfif"/>
+                <div class="author">Kanishk</div>
+                <div class="title">Effective Testing Strategies for Modern Applications on Skylab</div>
+                <div class="description">In an age where software applications are becoming increasingly complex, having effective testing strategies is essential to ensure quality...</div>
+                <div class="footer">
+                    <div class="views">
+                        <i class="fas fa-eye"></i> 0
+                    </div>
+                    <div class="likes">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Success Stories Section -->
+    <section class="stories">
+        <div class="container">
+            <h2>Customer Success Stories</h2>
+            <div class="stories">
+                <div class="story-card">
+                    <h3>Project Alpha</h3>
+                    <p>Skylab helped streamline testing, increasing efficiency by 40%.</p>
+                </div>
+                <div class="story-card">
+                    <h3>BetaLaunch</h3>
+                    <p>With Skylab, BetaLaunch reduced bugs by 60% in the final release.</p>
+                </div>
+                <div class="story-card">
+                    <h3>GammaSoft</h3>
+                    <p>Skylab’s tools improved team collaboration, achieving faster feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<div class="content-area">
+        <!-- Hero Section -->
+        <div class="intro-section">
+            <img src="C:\Users\DELL\Desktop\skylab\robert.PNG" alt="Icon" class="intro-icon">
+            <h1 class="intro-heading">Work together, achieve more</h1>
+            <p class="intro-subheading">Collaborate with your teams, use management tools that sync with your projects, and code from anywhere—all on a single, integrated platform.</p>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="card-container">
+            <div class="info-card">
+                <h2>Solve Bugs.</h2>
+                <p>Leverage AI-assisted & tester community security campaigns to reduce application vulnerabilities and zero-day attacks.</p>
+                <a href="#">Discover security campaigns &gt;</a>
+            </div>
+
+            <div class="info-card">
+                <h2>Dependencies you can depend on.</h2>
+                <p>Update vulnerable dependencies with supported fixes for breaking changes.</p>
+                <a href="#">Learn about Dependabot &gt;</a>
+            </div>
+
+            <div class="info-card">
+                <h2>Your secrets, your business: protected.</h2>
+                <p>Detect, prevent, and remediate leaked secrets across your organization.</p>
+                <a href="#">Read about secret scanning &gt;</a>
+            </div>
+        </div>
+
+        <!-- Summary Card -->
+        <div class="summary-card">
+            <h2>Performance Highlights</h2>
+            <div class="summary-stats">
+                <div>
+                    <h3>7x faster</h3>
+                    <p>vulnerability fixes</p>
+                </div>
+                <div>
+                    <h3>90% coverage</h3>
+                    <p>Copilot Autofix</p>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="footer">
+        <div>
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@skylab.com">info@skylab.com</a></p>
+            <p>Phone: (123) 456-7890</p>
+        </div>
+        <div>
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>&copy; 2024 Skylab. All rights reserved.</p>
+    </div>
+   <script>
+        function toggleNavbar() {
+            document.querySelector('.navbar').classList.toggle('active');
+        }
+
+    // Get the dropdown element
+    var dropdown = document.querySelector('.dropdown');
+    
+    // Add click event to toggle dropdown
+    dropdown.addEventListener('click', function(event) {
+        var dropdownContent = this.nextElementSibling;
+        dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+    });
+
+
+    </script>
+</body>
+</html>

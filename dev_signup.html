@@ -1,0 +1,186 @@
+<html>
+ <head>
+  <title>Developer sign up</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #1E1E2D;
+        color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        display: flex;
+        width: 80%;
+        max-width: 1200px;
+    }
+    .left-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .character {
+        width: 300px;
+        height: auto;
+    }
+    .right-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        background-color: #2D2D3A;
+        border-radius: 10px;
+    }
+    .right-section h2 {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .right-section h1 {
+        margin-bottom: 20px;
+        font-size: 28px;
+        font-weight: 700;
+        color: #7367F0; /* You can adjust the color if needed */
+    }
+    .right-section p {
+        margin: 10px 0 20px;
+        font-size: 14px;
+        color: #B0B0C3;
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #3A3A4A;
+        border-radius: 5px;
+        background-color: #1E1E2D;
+        color: #FFFFFF;
+        font-size: 14px;
+    }
+    .form-group input::placeholder {
+        color: #B0B0C3;
+    }
+    .form-group .eye-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    .form-group .checkbox {
+        display: flex;
+        align-items: center;
+    }
+    .form-group .checkbox input {
+        margin-right: 10px;
+    }
+    .form-group .checkbox a {
+        color: #7367F0;
+        text-decoration: none;
+    }
+    .form-group .checkbox a:hover {
+        text-decoration: underline;
+    }
+    .btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #7367F0;
+        border: none;
+        border-radius: 5px;
+        color: #FFFFFF;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #5A54D1;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .footer a {
+        color: #7367F0;
+        text-decoration: none;
+    }
+    .footer a:hover {
+        text-decoration: underline;
+    }
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .social-icons a {
+        color: #FFFFFF;
+        margin: 0 10px;
+        font-size: 20px;
+    }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="left-section">
+    <img alt="3D character sitting on a couch with a laptop" class="character" height="600" src="C:\Users\DELL\Desktop\skylab\devp2.png" width="600"/>
+   </div>
+   <div class="right-section">
+    <h1>Start Your Developer Journey with Skylab</h1> <!-- New heading added here -->
+    <h2>Adventure starts here <i class="fas fa-rocket"></i></h2>
+    <p>Make your app management easy and fun!</p>
+    <div class="form-group">
+     <label for="username">Username</label>
+     <input id="username" placeholder="Enter your username" type="text"/>
+    </div>
+    <div class="form-group">
+     <label for="email">Email</label>
+     <input id="email" placeholder="Enter your email" type="email"/>
+    </div>
+    <div class="form-group">
+     <label for="password">Password</label>
+     <div style="position: relative;">
+      <input id="password" placeholder="Enter your password" type="password"/>
+      <i class="fas fa-eye eye-icon"></i>
+     </div>
+    </div>
+    <div class="form-group checkbox">
+     <input id="agree" type="checkbox"/>
+     <label for="agree">I agree to <a href="#">privacy policy &amp; terms</a></label>
+    </div>
+    <button class="btn" onclick="redirectToThankYou()">Sign Up</button>
+    <div class="footer">
+     Already have an account? <a href="file:///C:/Users/DELL/Desktop/skylab/devlogin.html">Sign in instead</a>
+    </div>
+    <div class="footer">or</div>
+    <div class="social-icons">
+     <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+     <a href="https://https://.x.com/"><i class="fab fa-twitter"></i></a>
+     <a href="https://www.github.com/"><i class="fab fa-github"></i></a>
+     <a href="https://www.google.com/"><i class="fab fa-google"></i></a>
+    </div>
+   </div>
+  </div>
+<script>
+    function redirectToThankYou() {
+        // Add form validation logic here if needed before redirecting
+        window.location.href = "file:///C:/Users/DELL/Desktop/skylab/sky_tk.htm"; // Path to your thank-you page
+    }
+</script>
+
+ </body>
+</html>
+

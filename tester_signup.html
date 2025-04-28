@@ -1,0 +1,167 @@
+<html>
+ <head>
+  <title>
+   Tester Sign Up 
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa; /* Offwhite background */
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            max-width: 1200px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .image-section {
+            flex: 1;
+            background: url('https://placehold.co/600x800') no-repeat center center;
+            background-size: cover;
+        }
+        .form-section {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .form-section h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .form-section p {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #6c63ff;
+            margin-bottom: 5px;
+        }
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-section input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-section a {
+            color: #6c63ff;
+            text-decoration: none;
+        }
+        .form-section .btn {
+            background-color: #6c63ff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .form-section .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .form-section .social-icons a {
+            color: #6c757d;
+            font-size: 20px;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="image-section">
+    <img alt="Illustration of a person using a laptop with chat bubbles around them" height="800" src="C:\Users\DELL\Desktop\skylab\test2.png" style="width: 100%; height: 100%;" width="600"/>
+   </div>
+   <div class="form-section">
+    <h1>
+     Adventure starts here
+     <i class="fas fa-rocket">
+     </i>
+    </h1>
+    <p> Start your testing journey with skylab<p>
+    <p>
+     Make your app management easy and fun!
+    </p>
+    <label for="username">
+     Username
+    </label>
+    <input id="username" placeholder="Enter your username" type="text"/>
+    <label for="email">
+     Email
+    </label>
+    <input id="email" placeholder="Enter your email" type="email"/>
+    <label for="password">
+     Password
+    </label>
+    <input id="password" placeholder="Enter your password" type="password"/>
+    <div>
+     <input id="terms" type="checkbox"/>
+     <label for="terms">
+      I agree to
+      <a href="#">
+       privacy policy &amp; terms
+      </a>
+     </label>
+    </div>
+   <button class="btn" onclick="redirectToThankYou()">Sign Up</button>
+    <p>
+     Already have an account?
+     <a href="file:///C:/Users/DELL/Desktop/skylab/tester__login.html">
+      Sign in instead
+     </a>
+    </p>
+    <div class="social-icons">
+     <a href="https://www.facebook.com/">
+      <i class="fab fa-facebook">
+      </i>
+     </a>
+     <a href="https://https://x.com//">
+      <i class="fab fa-twitter">
+      </i>
+     </a>
+     <a href="https://www.github.com/">
+      <i class="fab fa-github">
+      </i>
+     </a>
+     <a href="https://www.google.com/">
+      <i class="fab fa-google">
+      </i>
+     </a>
+    </div>
+   </div>
+  </div>
+<script>
+    function redirectToThankYou() {
+        // Add form validation logic here if needed before redirecting
+        window.location.href = "file:///C:/Users/DELL/Desktop/skylab/sky_tk1.htm"; 
+    }
+</script>
+
+ </body>
+</html>

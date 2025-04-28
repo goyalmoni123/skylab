@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skylab Dashboard</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.dashboard {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+input, select {
+    margin: 10px 0;
+    padding: 8px;
+    width: calc(100% - 20px);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+</style>
+<iframe
+    width="800"
+    height="600"
+    src="C:\Users\DELL\Documents\skylabdata.pbix"
+    frameborder="0"
+    allowFullScreen="true"
+></iframe>
+
+</head>
+<body>
+    <div class="dashboard">
+        <h2>Skylab Dashboard</h2>
+
+        <!-- Search and Filter -->
+        <input type="text" id="searchInput" placeholder="Search users">
+        <select id="roleFilter">
+            <option value="">All Roles</option>
+            <option value="Developer">Developer</option>
+            <option value="JobProvider">Job Provider</option>
+            <option value="Tester">Tester</option>
+        </select>
+        <button onclick="fetchUsers()">Search</button>
+
+        <!-- User List -->
+        <h3>User List</h3>
+        <ul id="userList"></ul>
+
+        <!-- Job List -->
+        <h3>Job List</h3>
+        <ul id="jobList"></ul>
+    </div>
+
+    <script>// Function to fetch and display users based on search and filter
+function fetchUsers() {
+    const search = document.getElementById("searchInput").value;
+    const role = document.getElementById("roleFilter").value;
+
+    fetch(`fetch_users.php?search=${search}&role=${role}`)
+        .then(response => response.json())
+        .then(users => {
+            const userList = document.getElementById("userList");
+            userList.innerHTML = "";
+            users.forEach(user => {
+                const li = document.createElement("li");
+                li.textContent = `${user.name} - ${user.role}`;
+                userList.appendChild(li);
+            });
+        });
+}
+
+// Function to fetch and display jobs
+function fetchJobs() {
+    fetch(`fetch_jobs.php`)
+        .then(response => response.json())
+        .then(jobs => {
+            const jobList = document.getElementById("jobList");
+            jobList.innerHTML = "";
+            jobs.forEach(job => {
+                const li = document.createElement("li");
+                li.textContent = `${job.title} - Created by ${job.created_by_name} - Status: ${job.status}`;
+                jobList.appendChild(li);
+            });
+        });
+}
+
+// Initial data fetch
+document.addEventListener("DOMContentLoaded", () => {
+    fetchUsers();
+    fetchJobs();
+});
+</script>
+</body>
+</html>

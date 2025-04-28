@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skylab Job Provider Guidelines</title>
+  <style>
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #E0E0E0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background-color: #1E1E1E;
+  color: #F5F5F5;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #2C2C2C;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.nav-list li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav-list a {
+  color: #90CAF9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-list a:hover {
+  color: #64B5F6;
+}
+
+/* Main Section Styles */
+main {
+  padding: 2rem;
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: #BB86FC;
+  border-bottom: 2px solid #2C2C2C;
+  padding-bottom: 0.5rem;
+}
+
+p, ul, ol, table {
+  margin-bottom: 1.5rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+a {
+  color: #90CAF9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #64B5F6;
+}
+
+code {
+  background: #2C2C2C;
+  color: #BB86FC;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background-color: #2C2C2C;
+}
+
+th, td {
+  border: 1px solid #3C3C3C;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #37474F;
+  color: #ECEFF1;
+}
+
+td {
+  color: #CFD8DC;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  background: #1E1E1E;
+  color: #B0BEC5;
+  padding: 1rem;
+  border-top: 2px solid #2C2C2C;
+  margin-top: 2rem;
+}
+
+/* Button (Optional) */
+button {
+  background-color: #90CAF9;
+  color: #121212;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #64B5F6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .nav-list li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>Skylab Job Provider Guidelines & Documentation</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#creating-jobs">Creating Jobs</a></li>
+        <li><a href="#managing-jobs">Managing Jobs</a></li>
+        <li><a href="#payment-guidelines">Payment Guidelines</a></li>
+        <li><a href="#faq">FAQs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Welcome to Skylab's Job Provider Documentation. This guide explains how to create testing tasks, manage submissions, and ensure testers deliver optimal results.</p>
+    </section>
+
+    <section id="creating-jobs">
+      <h2>Creating Jobs</h2>
+      <p>To create a new job, follow these steps:</p>
+      <ol>
+        <li>Log in to your Skylab account and navigate to the "Job Management" section.</li>
+        <li>Click on <strong>Create New Job</strong>.</li>
+        <li>Fill in the details:
+          <ul>
+            <li><strong>Job Title:</strong> A concise name for the task.</li>
+            <li><strong>Description:</strong> Detailed steps for testers.</li>
+            <li><strong>Testing Type:</strong> Functional, Performance, UI/UX, etc.</li>
+            <li><strong>Devices:</strong> Specify target devices (e.g., mobile, desktop).</li>
+            <li><strong>Deadline:</strong> Set an appropriate completion time.</li>
+            <li><strong>Budget:</strong> Allocate funds for the task.</li>
+          </ul>
+        </li>
+        <li>Review and submit the job for approval.</li>
+      </ol>
+    </section>
+
+    <section id="managing-jobs">
+      <h2>Managing Jobs</h2>
+      <p>Once your job is live, manage it as follows:</p>
+      <ul>
+        <li>Monitor submissions on the <strong>Job Dashboard</strong>.</li>
+        <li>Review feedback and issue reports submitted by testers.</li>
+        <li>Approve or request revisions for submitted reports.</li>
+        <li>Communicate with testers if clarification is needed.</li>
+        <li>Close the job once all tasks are completed.</li>
+      </ul>
+    </section>
+
+    <section id="payment-guidelines">
+      <h2>Payment Guidelines</h2>
+      <p>Payments ensure testers are rewarded fairly. Here's how to manage payments:</p>
+      <ol>
+        <li>Set the budget while creating a job. You can specify:
+          <ul>
+            <li><strong>Per Tester:</strong> Fixed amount per tester.</li>
+            <li><strong>Overall Budget:</strong> Distributed among all testers.</li>
+          </ul>
+        </li>
+        <li>Funds will be held in escrow until job completion.</li>
+        <li>Release payments after approving reports.</li>
+      </ol>
+      <p><strong>Note:</strong> Skylab charges a 10% platform fee on all transactions.</p>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      <h3>What types of jobs can I post?</h3>
+      <p>You can post jobs for functional testing, UI/UX feedback, performance testing, and more.</p>
+
+      <h3>How do I ensure quality feedback?</h3>
+      <p>Provide detailed instructions and examples. Use Skylab’s feedback template for testers.</p>
+
+      <h3>Can I set tester requirements?</h3>
+      <p>Yes, you can filter testers by skills, location, or device capabilities when creating a job.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Skylab. All rights reserved.</p>
+  </footer>
+<script>
+// Add interactivity if needed, e.g., smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+</script>
+</body>
+</html>

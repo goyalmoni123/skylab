@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skylab Developer Guidelines</title>
+  <style>
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #E0E0E0;
+  line-height: 1.6;
+}
+
+/* Header Styles */
+.header {
+  background-color: #1E1E1E;
+  color: #F5F5F5;
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #2C2C2C;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.nav-list li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav-list a {
+  color: #90CAF9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-list a:hover {
+  color: #64B5F6;
+}
+
+/* Main Section Styles */
+main {
+  padding: 2rem;
+  background-color: #1E1E1E;
+  border-radius: 8px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  color: #BB86FC;
+  border-bottom: 2px solid #2C2C2C;
+  padding-bottom: 0.5rem;
+}
+
+p, ul, ol, table {
+  margin-bottom: 1.5rem;
+}
+
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+a {
+  color: #90CAF9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #64B5F6;
+}
+
+code {
+  background: #2C2C2C;
+  color: #BB86FC;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  background-color: #2C2C2C;
+}
+
+th, td {
+  border: 1px solid #3C3C3C;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #37474F;
+  color: #ECEFF1;
+}
+
+td {
+  color: #CFD8DC;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  background: #1E1E1E;
+  color: #B0BEC5;
+  padding: 1rem;
+  border-top: 2px solid #2C2C2C;
+  margin-top: 2rem;
+}
+
+/* Button (Optional) */
+button {
+  background-color: #90CAF9;
+  color: #121212;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #64B5F6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+
+  .nav-list li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+</style>
+</head>
+<body>
+  <header class="header">
+    <h1>Skylab Developer Guidelines & Documentation</h1>
+    <nav>
+      <ul class="nav-list">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#setup-guide">Setup Guide</a></li>
+        <li><a href="#api-docs">API Documentation</a></li>
+        <li><a href="#best-practices">Best Practices</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Welcome to the Skylab Developer Guidelines. This document provides instructions and tools to effectively work with Skylab's platform.</p>
+    </section>
+
+    <section id="setup-guide">
+      <h2>Setup Guide</h2>
+      <ol>
+        <li>Clone the Skylab repository from GitHub.</li>
+        <li>Install dependencies: <code>npm install</code>.</li>
+        <li>Set up the database using MongoDB/PostgreSQL scripts provided in the repo.</li>
+        <li>Run the server: <code>npm start</code>.</li>
+        <li>Access Skylab locally at <code>http://localhost:3000</code>.</li>
+      </ol>
+    </section>
+
+    <section id="api-docs">
+      <h2>API Documentation</h2>
+      <p>The Skylab platform provides a RESTful API. Below are some key endpoints:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Endpoint</th>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>/api/register</code></td>
+            <td>POST</td>
+            <td>Register a new user</td>
+          </tr>
+          <tr>
+            <td><code>/api/jobs</code></td>
+            <td>GET</td>
+            <td>Fetch all test jobs</td>
+          </tr>
+          <tr>
+            <td><code>/api/feedback</code></td>
+            <td>POST</td>
+            <td>Submit feedback</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="best-practices">
+      <h2>Best Practices</h2>
+      <ul>
+        <li>Follow semantic versioning for all updates.</li>
+        <li>Write clear, concise comments for all new code.</li>
+        <li>Use ESLint and Prettier for consistent coding standards.</li>
+        <li>Ensure test coverage for all new features.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Skylab. All rights reserved.</p>
+  </footer>
+<script>
+// Add interactivity if needed, e.g., smooth scrolling
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+</script>
+</body>
+</html>

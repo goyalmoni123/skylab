@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester Dashboard</title>
+<style>
+/* /* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    color: #3498db;
+}
+
+.sidebar-menu li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: #3498db;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #ecf0f1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Editor Styling */
+.editor, .output, .preview {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+</style>
+   </head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>TestHub</h2>
+            <ul class="sidebar-menu">
+                <li><a href="#" data-section="dashboard">Dashboard</a></li>
+                <li><a href="#" data-section="devTools">Tester Tools</a></li>
+                <li><a href="#" data-section="testCases">Test Cases</a></li>
+                <li><a href="#" data-section="bugTracking">Bug Tracking</a></li>
+                <li><a href="#" data-section="notifications">Notifications</a></li>
+                <li><a href="#" data-section="helpCenter">Help Center</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h1>Tester Dashboard</h1>
+                <div class="user-profile">
+                    <span class="user-name">Hello, Tester!</span>
+                </div>
+            </header>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <h2>Welcome to the Tester Dashboard</h2>
+                <p>Track your projects, manage test cases, and resolve bugs efficiently.</p>
+            </section>
+
+            <!-- Tester Tools Section -->
+            <section id="devTools" class="content-section">
+                <h2>Tester Tools</h2>
+                <!-- JavaScript Console -->
+                <div class="editor">
+                    <h4>JavaScript Console</h4>
+                    <textarea id="jsConsole" placeholder="Type JavaScript here..."></textarea>
+                    <button onclick="runJavaScript()">Run JavaScript</button>
+                    <div id="jsOutput" class="output">Output will appear here.</div>
+                </div>
+
+                <!-- Python Console -->
+                <div class="editor">
+                    <h4>Python Console</h4>
+                    <textarea id="pythonConsole" placeholder="Type Python code here..."></textarea>
+                    <button onclick="runPython()">Run Python</button>
+                    <div id="pythonOutput" class="output">Output will appear here.</div>
+                </div>
+
+                <!-- C Console -->
+                <div class="editor">
+                    <h4>C Console (Simulated)</h4>
+                    <textarea id="cConsole" placeholder="Write C code here..."></textarea>
+                    <button onclick="runC()">Run C</button>
+                    <div id="cOutput" class="output">Output will appear here.</div>
+                </div>
+
+                <!-- C++ Console -->
+                <div class="editor">
+                    <h4>C++ Console (Simulated)</h4>
+                    <textarea id="cppConsole" placeholder="Write C++ code here..."></textarea>
+                    <button onclick="runCpp()">Run C++</button>
+                    <div id="cppOutput" class="output">Output will appear here.</div>
+                </div>
+
+                <!-- Live HTML Editor -->
+                <div class="editor">
+                    <h4>Live HTML Editor</h4>
+                    <textarea id="htmlEditor" placeholder="Write HTML here..."></textarea>
+                    <div id="htmlPreview" class="preview">Live HTML preview will appear here.</div>
+                </div>
+
+                <!-- Live CSS Editor -->
+                <div class="editor">
+                    <h4>Live CSS Editor</h4>
+                    <textarea id="cssEditor" placeholder="Write CSS here..."></textarea>
+                    <button onclick="applyCSS()">Apply CSS</button>
+                </div>
+            </section>
+
+            <!-- Test Cases Section -->
+            <section id="testCases" class="content-section">
+                <h2>Test Cases</h2>
+                <input type="text" id="testCaseInput" placeholder="Add a new test case">
+                <button onclick="addTestCase()">Add Test Case</button>
+                <ul id="testCaseList"></ul>
+            </section>
+
+            <!-- Bug Tracking Section -->
+            <section id="bugTracking" class="content-section">
+                <h2>Bug Tracking</h2>
+                <input type="text" id="bugInput" placeholder="Describe a bug">
+                <button onclick="addBug()">Add Bug</button>
+                <ul id="bugList"></ul>
+            </section>
+
+            <!-- Notifications Section -->
+            <section id="notifications" class="content-section">
+                <h2>Notifications</h2>
+                <ul id="notificationList">
+                    <li>New feature released</li>
+                    <li>Bug #102 resolved</li>
+                    <li>New test cases assigned</li>
+                </ul>
+            </section>
+
+            <!-- Help Center Section -->
+            <section id="helpCenter" class="content-section">
+                <h2>Help Center</h2>
+                <p>For support, please contact your team lead or email support@testhub.com.</p>
+            </section>
+        </main>
+    </div>
+ <script>
+document.addEventListener(&quot;DOMContentLoaded&quot;, () =&gt; {
+// Section Navigation
+document.querySelectorAll(&quot;.sidebar-menu a[data-section]&quot;).forEach(link =&gt; {
+link.addEventListener(&quot;click&quot;, e =&gt; {
+e.preventDefault();
+document.querySelectorAll(&quot;.content-section&quot;).forEach(section =&gt;
+section.classList.remove(&quot;active&quot;));
+const sectionId = link.getAttribute(&quot;data-section&quot;);
+document.getElementById(sectionId).classList.add(&quot;active&quot;);
+});
+});
+});
+
+// JavaScript Console
+function runJavaScript() {
+const code = document.getElementById(&quot;jsConsole&quot;).value;
+try {
+const result = eval(code);
+document.getElementById(&quot;jsOutput&quot;).textContent = result ?? &quot;Executed successfully.&quot;;
+} catch (error) {
+document.getElementById(&quot;jsOutput&quot;).textContent = `Error: ${error.message}`;
+}
+}
+
+// Python Console
+async function runPython() {
+const pyCode = document.getElementById(&quot;pythonConsole&quot;).value;
+try {
+
+const pyodide = await loadPyodide();
+const result = pyodide.runPython(pyCode);
+document.getElementById(&quot;pythonOutput&quot;).textContent = result;
+} catch (error) {
+document.getElementById(&quot;pythonOutput&quot;).textContent = `Error: ${error.message}`;
+}
+}
+
+// Simulated C Console
+function runC() {
+document.getElementById(&quot;cOutput&quot;).textContent = &quot;Simulated C execution: This feature requires
+a compiler.&quot;;
+}
+
+// Simulated C++ Console
+function runCpp() {
+document.getElementById(&quot;cppOutput&quot;).textContent = &quot;Simulated C++ execution: This feature
+requires a compiler.&quot;;
+}
+
+// Live HTML Editor
+document.getElementById(&quot;htmlEditor&quot;).addEventListener(&quot;input&quot;, () =&gt; {
+const htmlContent = document.getElementById(&quot;htmlEditor&quot;).value;
+document.getElementById(&quot;htmlPreview&quot;).innerHTML = htmlContent;
+});
+
+// Live CSS Editor
+function applyCSS() {
+
+const cssContent = document.getElementById(&quot;cssEditor&quot;).value;
+const style = document.createElement(&quot;style&quot;);
+style.textContent = cssContent;
+document.head.appendChild(style);
+}
+
+// Test Case Tracker
+function addTestCase() {
+const testCase = document.getElementById(&quot;testCaseInput&quot;).value.trim();
+if (testCase) {
+const li = document.createElement(&quot;li&quot;);
+li.textContent = testCase;
+document.getElementById(&quot;testCaseList&quot;).appendChild(li);
+document.getElementById(&quot;testCaseInput&quot;).value = &quot;&quot;;
+}
+}
+
+// Bug Tracker
+function addBug() {
+const bug = document.getElementById(&quot;bugInput&quot;).value.trim();
+if (bug) {
+const li = document.createElement(&quot;li&quot;);
+li.textContent = bug;
+document.getElementById(&quot;bugList&quot;).appendChild(li);
+document.getElementById(&quot;bugInput&quot;).value = &quot;&quot;;
+}
+}
+</script>
+</body>
+</html>

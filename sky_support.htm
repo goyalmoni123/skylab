@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Skylab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1c1c1e;
+    color: #e4e4e7;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #2b2b2e;
+    color: #e4e4e7;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    color: #9cdbd3;
+}
+
+/* Main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.card {
+    background-color: #2b2b2e;
+    width: 90%;
+    max-width: 800px;
+    margin: 1rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card h2 {
+    color: #9cdbd3;
+    margin-bottom: 0.75rem;
+}
+
+.card ul, .card ol {
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.card li {
+    margin-bottom: 0.5rem;
+}
+
+.card a {
+    color: #00aaff;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+}
+
+.support-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.support-form label {
+    margin-top: 1rem;
+}
+
+.support-form input, .support-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #333;
+    color: #e4e4e7;
+}
+
+.support-form button {
+    margin-top: 1rem;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #00aaff;
+    color: #e4e4e7;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.support-form button:hover {
+    background-color: #0088cc;
+}
+
+/* Footer */
+footer {
+    background-color: #111113;
+    color: #9cdbd3;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Skylab Help & Support</h1>
+            <p>Your resource hub for questions, troubleshooting, and community support.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Getting Started</h2>
+            <p>New to Skylab? Learn how to set up your account, navigate the dashboard, and start testing or creating test jobs. Visit our <a href="file:///C:/Users/DELL/Desktop/skylab/sky_gendoc.htm">Documentation</a> for a detailed guide.</p>
+        </section>
+
+        <section class="card">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <div class="faq-item">
+                <h3>How do I become a tester?</h3>
+                <p>Simply <a href="file:///C:/Users/DELL/Desktop/skylab/main2.html#">register here</a>, create a profile, and start browsing available test jobs. Read our guidelines to understand expectations and maximize your earnings.</p>
+            </div>
+            <div class="faq-item">
+                <h3>How do I create a test job as a developer?</h3>
+                <p>Sign up as a developer, go to your dashboard, and follow the step-by-step guide to create a test job. You can specify test requirements and monitor feedback in real-time.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What should I do if I encounter a technical issue?</h3>
+                <p>Check our troubleshooting guide below, or reach out to support using the contact form at the bottom of this page.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>Technical Troubleshooting</h2>
+            <p>If you encounter any issues, try the following steps:</p>
+            <ul>
+                <li>Clear your browser’s cache and reload the page.</li>
+                <li>Make sure you’re using a supported browser version.</li>
+                <li>Check your internet connection.</li>
+                <li>Refer to our <a href="docs.html">technical documentation</a> for compatibility requirements.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Contact Support</h2>
+            <p>If you need further assistance, please fill out the contact form below. Our support team will respond within 24-48 hours.</p>
+            <form action="submit_ticket.html" method="post" class="support-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="issue">Issue Description:</label>
+                <textarea id="issue" name="issue" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Skylab. All rights reserved.</p>
+    </footer>
+</body>
+</html>

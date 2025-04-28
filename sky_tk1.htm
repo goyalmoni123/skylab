@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Skylab</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-size: 50px;
+            color: #00b3b3;
+        }
+        p {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #00b3b3;
+            color: #000;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #008080;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="C:\Users\DELL\Desktop\skylab\skylab_logo.PNG" alt="Skylab Logo">
+        </div>
+        <h1>Thank You!</h1>
+        <p>Welcome to Skylab. Your account has been successfully created.</p>
+        <button onclick="goToDashboard()">Go to Dashboard</button>
+    </div>
+
+    <script>
+        // Redirects to the dashboard page
+        function goToDashboard() {
+            window.location.href = 'file:///C:/Users/DELL/Desktop/skylab/test_dashboard.htm'; // Replace with your actual dashboard page URL
+        }
+    </script>
+</body>
+</html>

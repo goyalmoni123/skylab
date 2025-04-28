@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Skylab</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        /* Basic Styling */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #1a1d21;
+            color: #e0e6ed;
+            overflow-x: hidden;
+        }
+
+        /* Header Section */
+        .about-header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #004466;
+            color: #e0e6ed;
+            animation: slideDown 1s ease-out;
+        }
+
+        .about-header h1 {
+            font-size: 48px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .about-header p {
+            font-size: 20px;
+            margin-top: 10px;
+            color: #5fa2a2;
+        }
+
+        /* About Content Section */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 60px 20px;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            color: #5fa2a2;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            max-width: 800px;
+            font-size: 18px;
+            color: #a3b1c2;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+        }
+
+        .feature-card {
+            background-color: #2b2f36;
+            border: 1px solid #444b52;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 280px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            opacity: 0;
+            animation: fadeInUp 1s forwards;
+        }
+
+        .feature-card i {
+            font-size: 36px;
+            color: #5fa2a2;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            color: #e0e6ed;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: #a3b1c2;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        /* Hover Effect */
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer Section */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #22272e;
+            color: #a3b1c2;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="about-header">
+        <h1>About Skylab</h1>
+        <p>Empowering Developers and Testers through Cloud Collaboration</p>
+    </div>
+
+    <!-- About Content -->
+    <div class="about-content">
+        <h2>Our Mission</h2>
+        <p>Skylab is a cloud-based platform dedicated to streamlining the development process for developers and testers alike. With our crowdsourced testing framework, we aim to revolutionize the way teams gather feedback, analyze performance, and ensure product quality. Whether you’re launching a new feature or scaling an existing application, Skylab provides the tools to help you succeed in today’s fast-paced digital environment.</p>
+    </div>
+
+    <!-- Features Section -->
+    <div class="features">
+        <div class="feature-card" style="animation-delay: 0.2s;">
+            <i class="fas fa-users"></i>
+            <h3>Community Collaboration</h3>
+            <p>Engage with a diverse testing community to get real-world feedback on your applications, enabling broader test coverage.</p>
+        </div>
+        <div class="feature-card" style="animation-delay: 0.4s;">
+            <i class="fas fa-tasks"></i>
+            <h3>Automated Testing</h3>
+            <p>Utilize automated testing with tools like Selenium, saving time and ensuring consistent, reliable results.</p>
+        </div>
+        <div class="feature-card" style="animation-delay: 0.6s;">
+            <i class="fas fa-chart-line"></i>
+            <h3>Performance Insights</h3>
+            <p>Gain valuable insights from detailed analytics on your test jobs, helping you refine and optimize your applications.</p>
+        </div>
+        <div class="feature-card" style="animation-delay: 0.8s;">
+            <i class="fas fa-cloud"></i>
+            <h3>Cloud Integration</h3>
+            <p>Seamlessly integrate with cloud services to harness the power of remote testing and collaboration on a global scale.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Skylab. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
+

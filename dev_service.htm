@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Information - Skylab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0d1117; /* Dark background like GitHub */
+            color: #c9d1d9; /* Soft text color for readability */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #9cdbd3; /* Bright accent color for headings */
+            text-align: center;
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .section:nth-child(even) {
+            background-color: #161b22;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #8b949e; /* Muted color for supporting text */
+        }
+
+        .features, .future, .testimonials {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature, .trend, .testimonial {
+            background-color: #161b22; /* Dark card background */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            border: 1px solid #30363d; /* Subtle border for separation */
+        }
+
+        .feature h3, .trend h3, .testimonial h3 {
+            color: #58a6ff;
+            font-size: 24px;
+        }
+
+        .feature p, .trend p, .testimonial p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #8b949e;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta button {
+            background-color: #238636; /* Vibrant green for call-to-action */
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta button:hover {
+            background-color: #2ea043; /* Darker green on hover */
+        }
+
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #2b2b2e; /* Dark gray */
+            color: #e4e4e7;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            color: #9cdbd3; /* Muted green */
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background-color: #2b2b2e; /* Dark gray */
+            width: 90%;
+            max-width: 800px;
+            margin: 1rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            color: #9cdbd3; /* Muted green */
+            margin-bottom: 0.75rem;
+        }
+
+        .card ul, .card ol {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card a {
+            color: #00aaff; /* Blue link color */
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #111113; /* Darker background */
+            color: #9cdbd3; /* Muted green text */
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Welcome to Skylab for Developers</h1>
+            <p>Maximize your app’s potential with our crowdsourced testing platform.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Why Choose Skylab?</h2>
+            <ul>
+                <li>Access diverse real-world testing environments and users.</li>
+                <li>Get feedback and performance insights from experienced testers.</li>
+                <li>Optimize your application for better user satisfaction and reliability.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Core Features for Developers</h2>
+            <ul>
+                <li>Customizable test jobs with specific requirements and feedback criteria.</li>
+                <li>Real-time feedback through a centralized dashboard.</li>
+                <li>Integration with popular CI/CD tools for streamlined testing.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Getting Started as a Developer</h2>
+            <p>Follow these steps to get started on Skylab:</p>
+            <ol>
+                <li>Create an account on the platform and set up your developer profile.</li>
+                <li>Create test jobs, specifying testing requirements and scope.</li>
+                <li>Monitor feedback and performance results on the developer dashboard.</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Developer Dashboard Overview</h2>
+            <p>The developer dashboard provides key tools for managing tests:</p>
+            <ul>
+                <li>Feedback Summary: View insights and detailed comments from testers.</li>
+                <li>Performance Metrics: Track app performance in real-world environments.</li>
+                <li>Test History: Access a log of all your past test jobs and results.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Best Practices for Using Skylab</h2>
+            <p>Maximize the value of Skylab’s platform with these tips:</p>
+            <ul>
+                <li>Define clear objectives and guidelines for each test job.</li>
+                <li>Engage with testers by providing constructive feedback on their reports.</li>
+                <li>Utilize performance data to make iterative improvements to your app.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Resources and Support</h2>
+            <p>Need help? Visit our <a href="file:///C:/Users/DELL/Desktop/skylab/sky_support.htm">Support Page</a> or explore our <a href="file:///C:/Users/DELL/Desktop/skylab/sky_devdoc.htm">Developer Documentation</a> for integration guides and best practices.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Skylab. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

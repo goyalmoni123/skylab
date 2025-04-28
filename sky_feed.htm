@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skylab Feed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Skylab Feed CSS */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #1E1E2D;
+            color: #FFFFFF;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1400px;
+            margin: 20px auto;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        /* Sidebar Section */
+        .sidebar {
+            flex: 1;
+            background-color: #2D2D3A;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .sidebar img.profile-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .sidebar h2 {
+            font-size: 18px;
+            color: #7367F0;
+            margin: 10px 0;
+        }
+
+        .sidebar p {
+            font-size: 14px;
+            color: #B0B0C3;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #FFFFFF;
+            margin: 10px 0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sidebar a:hover {
+            color: #7367F0;
+        }
+
+        /* Feed Section */
+        .feed {
+            flex: 2;
+        }
+
+        .post-input {
+            background-color: #2D2D3A;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-input textarea {
+            width: 100%;
+            height: 60px;
+            border: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #1E1E2D;
+            color: #FFFFFF;
+            font-size: 14px;
+            resize: none;
+        }
+
+        .post-input button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #7367F0;
+            border: none;
+            border-radius: 8px;
+            color: #FFFFFF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .post-input button:hover {
+            background-color: #5A54D1;
+        }
+
+        .post {
+            background-color: #2D2D3A;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .post-header img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .post-header .author {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .post-header .time {
+            font-size: 14px;
+            color: #B0B0C3;
+            margin-left: 10px;
+        }
+
+        .post-content {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #B0B0C3;
+        }
+
+        .post-content img,
+        .post-content video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        /* Trending Section */
+        .trending {
+            flex: 1;
+            background-color: #2D2D3A;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .trending h2 {
+            font-size: 18px;
+            color: #7367F0;
+            margin-bottom: 10px;
+        }
+
+        .trending ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .trending ul li {
+            margin: 10px 0;
+        }
+
+        .trending ul li a {
+            text-decoration: none;
+            color: #B0B0C3;
+            font-size: 14px;
+        }
+
+        .trending ul li a:hover {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="C:\Users\DELL\Desktop\skylab\pp.jfif" alt="Profile Picture" class="profile-pic">
+            <h2>Kavisha Rathore</h2>
+            <p>Tester, New Delhi</p>
+            <a href="#">Profile</a>
+            <a href="#">Communities</a>
+            <a href="#">Messages</a>
+        </div>
+
+        <!-- Feed -->
+        <div class="feed">
+            <div class="post-input">
+                <textarea placeholder="Start a post..."></textarea>
+                <button>Post</button>
+            </div>
+
+            <!-- Post 1 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/50" alt="Author">
+                    <span class="author">Jagriti Verma</span>
+                    <span class="time">2 hours ago</span>
+                </div>
+                <div class="post-content">
+                    Just published a new blog on testing automation! Check it out on the Skylab blog platform. 🚀
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/50" alt="Author">
+                    <span class="author">Atharv Singh</span>
+                    <span class="time">4 hours ago</span>
+                </div>
+                <div class="post-content">
+                    Collaborated with an amazing team of developers to optimize our cloud testing workflows. 💻
+                    <img src="C:\Users\DELL\Desktop\skylab\pp2.jfif" alt="Testing Workflow">
+                </div>
+            </div>
+
+            <!-- Post 3 (Video Post) -->
+            <div class="post">
+                <div class="post-header">
+                    <img src="https://via.placeholder.com/50" alt="Author">
+                    <span class="author">Maya Sharma</span>
+                    <span class="time">6 hours ago</span>
+                </div>
+                <div class="post-content">
+                    Here's a quick video tutorial on integrating Skylab with your CI/CD pipeline. 🚀
+                    <video controls>
+                        <source src="https://www.linkedin.com/pulse/elevating-engagement-scientific-strategies-software-amin-ybjzf/" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Section -->
+        <div class="trending">
+            <h2>Trending Now</h2>
+            <ul>
+                <li><a href="#">Top 10 Tools for Software Testing</a></li>
+                <li><a href="#">How Skylab is Revolutionizing Cloud Testing</a></li>
+                <li><a href="#">AI in Software Development</a></li>
+                <li><a href="#">Latest Trends in Automation Testing</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

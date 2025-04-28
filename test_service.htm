@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tester Information and Details - Skylab</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #0d1117; /* Dark background like GitHub */
+            color: #c9d1d9; /* Soft text color for readability */
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #9cdbd3; /* Bright accent color for headings */
+            text-align: center;
+        }
+
+        .section {
+            padding: 40px 0;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .section:nth-child(even) {
+            background-color: #161b22;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .intro p {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #8b949e; /* Muted color for supporting text */
+        }
+
+        .features, .future, .testimonials {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature, .trend, .testimonial {
+            background-color: #161b22; /* Dark card background */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 350px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            border: 1px solid #30363d; /* Subtle border for separation */
+        }
+
+        .feature h3, .trend h3, .testimonial h3 {
+            color: #58a6ff;
+            font-size: 24px;
+        }
+
+        .feature p, .trend p, .testimonial p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: #8b949e;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .cta button {
+            background-color: #238636; /* Vibrant green for call-to-action */
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cta button:hover {
+            background-color: #2ea043; /* Darker green on hover */
+        }
+
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #2b2b2e; /* Dark gray */
+            color: #e4e4e7;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-content p {
+            font-size: 1.2rem;
+            color: #9cdbd3; /* Muted green */
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .card {
+            background-color: #2b2b2e; /* Dark gray */
+            width: 90%;
+            max-width: 800px;
+            margin: 1rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .card h2 {
+            color: #9cdbd3; /* Muted green */
+            margin-bottom: 0.75rem;
+        }
+
+        .card ul, .card ol {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+
+        .card a {
+            color: #00aaff; /* Blue link color */
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: #111113; /* Darker background */
+            color: #9cdbd3; /* Muted green text */
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Welcome to Skylab Testing</h1>
+            <p>Your guide to becoming a tester and navigating the Skylab platform.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Why Become a Skylab Tester?</h2>
+            <ul>
+                <li>Flexible testing jobs that suit your skills.</li>
+                <li>Earn while enhancing your testing experience.</li>
+                <li>Join a diverse network of testers and developers.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Types of Testing Opportunities</h2>
+            <p>At Skylab, we offer various testing types:</p>
+            <ul>
+                <li>Functional Testing</li>
+                <li>Performance Testing</li>
+                <li>UI/UX Testing</li>
+                <li>Compatibility Testing</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>How Skylab Works for Testers</h2>
+            <p>Follow these steps to get started:</p>
+            <ol>
+                <li>Sign up on our platform and create a tester profile.</li>
+                <li>Browse available tests that match your skills.</li>
+                <li>Submit quality feedback for each test to earn rewards.</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Getting Started</h2>
+            <p>Ready to start testing? <a href="file:///C:/Users/DELL/Desktop/skylab/tester_signup.html" class="cta-button">Register here</a> to join our community of testers.</p>
+        </section>
+
+        <section class="card">
+            <h2>Tester Dashboard Overview</h2>
+            <p>The dashboard gives you access to all your testing tools:</p>
+            <ul>
+                <li>Available Tests: View and select from a list of open test jobs.</li>
+                <li>Earnings Summary: Track your progress and payments.</li>
+                <li>Feedback History: Review your submitted feedback for quality.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Instructions for Running Tests</h2>
+            <p>To run tests effectively, follow these steps:</p>
+            <ul>
+                <li>Read each test’s guidelines and requirements carefully.</li>
+                <li>Use recommended tools (e.g., Selenium, JMeter) if needed.</li>
+                <li>Submit detailed and actionable feedback once complete.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Earnings and Rewards System</h2>
+            <p>Earn rewards for quality feedback and timely submissions. Payouts are processed regularly based on completed tests.</p>
+        </section>
+
+        <section class="card">
+            <h2>Best Practices for Testers</h2>
+            <p>Maximize your impact by following these best practices:</p>
+            <ul>
+                <li>Submit thorough and constructive feedback.</li>
+                <li>Report issues accurately, with steps to reproduce.</li>
+                <li>Avoid common mistakes by reviewing our<a href="file:///C:/Users/DELL/Desktop/skylab/sky_jobdoc.htm">Guidelines</a>.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Support and Community Resources</h2>
+            <p>Need help? Visit our <a href="file:///C:/Users/DELL/Desktop/skylab/sky_support.htm" class="cta-button">Support Page</a> or connect with our community for guidance and resources.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Skylab. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .forgot-password-container {
+            background-color: #161b22;
+            padding: 40px;
+            border-radius: 8px;
+            width: 400px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        .forgot-password-container h2 {
+            color: #58a6ff;
+            margin-bottom: 20px;
+        }
+        
+        .forgot-password-container p {
+            font-size: 16px;
+            color: #b1b5bb;
+            margin-bottom: 30px;
+        }
+        
+        .forgot-password-container input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            background-color: #21262d;
+            color: #c9d1d9;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .forgot-password-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #58a6ff;
+            color: #0d1117;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .forgot-password-container button:hover {
+            background-color: #4691e6;
+        }
+        
+        .forgot-password-container a {
+            display: block;
+            margin-top: 20px;
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .forgot-password-container a:hover {
+            color: #77b9ff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="forgot-password-container">
+    <h2>Forgot Password</h2>
+    <p>Enter your email address and we'll send you a link to reset your password.</p>
+    
+    <form action="/reset-password" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Send Reset Link</button>
+    </form>
+    
+    <a href="login.html">Back to Login</a>
+</div>
+
+</body>
+</html>
